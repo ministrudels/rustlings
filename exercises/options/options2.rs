@@ -1,5 +1,7 @@
 // options2.rs
-// Execute `rustlings hint options2` or use the `hint` watch subcommand for a hint.
+//
+// Execute `rustlings hint options2` or use the `hint` watch subcommand for a
+// hint.
 
 #[cfg(test)]
 mod tests {
@@ -19,9 +21,10 @@ mod tests {
 
     #[test]
     fn layered_option() {
-        let mut range = 10;
-        let mut optional_integers: Vec<Option<i8>> = Vec::new();
-        for i in 0..(range + 1) {
+        let range = 10;
+        let mut optional_integers: Vec<Option<i8>> = vec![None];
+
+        for i in 1..(range + 1) {
             optional_integers.push(Some(i));
         }
 
@@ -34,5 +37,7 @@ mod tests {
                 range -= 1;
             }
         }
+
+        assert_eq!(cursor, 0);
     }
 }
