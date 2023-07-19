@@ -36,7 +36,6 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
         // If the team is not present in the scores table, insert it with
         // the default value.
         let mut team = scores.entry(team_1_name.clone()).or_insert(Team {
-            name: team_1_name.clone(),
             goals_scored: 0,
             goals_conceded: 0,
         });
@@ -44,7 +43,6 @@ fn build_scores_table(results: String) -> HashMap<String, Team> {
         team.goals_conceded += team_2_score;
 
         let mut team2 = scores.entry(team_2_name.clone()).or_insert(Team {
-            name: team_2_name.clone(),
             goals_scored: 0,
             goals_conceded: 0,
         });
