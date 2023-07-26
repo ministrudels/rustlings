@@ -28,13 +28,14 @@ mod tests {
             optional_integers.push(Some(i));
         }
 
+        let mut cursor = range;
         // TODO: make this a while let statement - remember that vector.pop also adds another layer of Option<T>
-        // pop is not guarenteed determined
+        // pop is not guaranteed determined
         while let Some(integer) = optional_integers.pop() {
             // Stack another Some() because this is a list of optional integers
             if let Some(integer) = integer {
-                assert_eq!(integer, range);
-                range -= 1;
+                assert_eq!(integer, cursor);
+                cursor -= 1;
             }
         }
 
